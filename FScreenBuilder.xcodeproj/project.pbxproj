@@ -1,0 +1,314 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF546C58157F449D009DB81C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF546C57157F449D009DB81C /* Cocoa.framework */; };
+		EF546C62157F449D009DB81C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF546C60157F449D009DB81C /* InfoPlist.strings */; };
+		EF546C64157F449D009DB81C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF546C63157F449D009DB81C /* main.m */; };
+		EF546C68157F449D009DB81C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EF546C66157F449D009DB81C /* Credits.rtf */; };
+		EF546C6B157F449D009DB81C /* FSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF546C6A157F449D009DB81C /* FSAppDelegate.m */; };
+		EF546C6E157F449E009DB81C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF546C6C157F449E009DB81C /* MainMenu.xib */; };
+		EF546C71157F449E009DB81C /* FScreenBuilder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF546C6F157F449E009DB81C /* FScreenBuilder.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EF546C53157F449D009DB81C /* FScreenBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FScreenBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF546C57157F449D009DB81C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EF546C5A157F449D009DB81C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		EF546C5B157F449D009DB81C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EF546C5C157F449D009DB81C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EF546C5F157F449D009DB81C /* FScreenBuilder-Info.plist */ = {isa = PBXFileReference; path = "FScreenBuilder-Info.plist"; sourceTree = "<group>"; };
+		EF546C61157F449D009DB81C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EF546C63157F449D009DB81C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EF546C65157F449D009DB81C /* FScreenBuilder-Prefix.pch */ = {isa = PBXFileReference; path = "FScreenBuilder-Prefix.pch"; sourceTree = "<group>"; };
+		EF546C67157F449D009DB81C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		EF546C69157F449D009DB81C /* FSAppDelegate.h */ = {isa = PBXFileReference; path = FSAppDelegate.h; sourceTree = "<group>"; };
+		EF546C6A157F449D009DB81C /* FSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSAppDelegate.m; sourceTree = "<group>"; };
+		EF546C6D157F449E009DB81C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EF546C70157F449E009DB81C /* FScreenBuilder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FScreenBuilder.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF546C50157F449D009DB81C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF546C58157F449D009DB81C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF546C48157F449D009DB81C = {
+			isa = PBXGroup;
+			children = (
+				EF546C5D157F449D009DB81C /* FScreenBuilder */,
+				EF546C56157F449D009DB81C /* Frameworks */,
+				EF546C54157F449D009DB81C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF546C54157F449D009DB81C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF546C53157F449D009DB81C /* FScreenBuilder.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF546C56157F449D009DB81C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF546C57157F449D009DB81C /* Cocoa.framework */,
+				EF546C59157F449D009DB81C /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF546C59157F449D009DB81C /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF546C5A157F449D009DB81C /* AppKit.framework */,
+				EF546C5B157F449D009DB81C /* CoreData.framework */,
+				EF546C5C157F449D009DB81C /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		EF546C5D157F449D009DB81C /* FScreenBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				EF546C69157F449D009DB81C /* FSAppDelegate.h */,
+				EF546C6A157F449D009DB81C /* FSAppDelegate.m */,
+				EF546C6C157F449E009DB81C /* MainMenu.xib */,
+				EF546C6F157F449E009DB81C /* FScreenBuilder.xcdatamodeld */,
+				EF546C5E157F449D009DB81C /* Supporting Files */,
+			);
+			path = FScreenBuilder;
+			sourceTree = "<group>";
+		};
+		EF546C5E157F449D009DB81C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF546C5F157F449D009DB81C /* FScreenBuilder-Info.plist */,
+				EF546C60157F449D009DB81C /* InfoPlist.strings */,
+				EF546C63157F449D009DB81C /* main.m */,
+				EF546C65157F449D009DB81C /* FScreenBuilder-Prefix.pch */,
+				EF546C66157F449D009DB81C /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF546C52157F449D009DB81C /* FScreenBuilder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF546C74157F449E009DB81C /* Build configuration list for PBXNativeTarget "FScreenBuilder" */;
+			buildPhases = (
+				EF546C4F157F449D009DB81C /* Sources */,
+				EF546C50157F449D009DB81C /* Frameworks */,
+				EF546C51157F449D009DB81C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FScreenBuilder;
+			productName = FScreenBuilder;
+			productReference = EF546C53157F449D009DB81C /* FScreenBuilder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF546C4A157F449D009DB81C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FS;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = EastPad;
+			};
+			buildConfigurationList = EF546C4D157F449D009DB81C /* Build configuration list for PBXProject "FScreenBuilder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EF546C48157F449D009DB81C;
+			productRefGroup = EF546C54157F449D009DB81C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF546C52157F449D009DB81C /* FScreenBuilder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF546C51157F449D009DB81C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF546C62157F449D009DB81C /* InfoPlist.strings in Resources */,
+				EF546C68157F449D009DB81C /* Credits.rtf in Resources */,
+				EF546C6E157F449E009DB81C /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF546C4F157F449D009DB81C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF546C64157F449D009DB81C /* main.m in Sources */,
+				EF546C6B157F449D009DB81C /* FSAppDelegate.m in Sources */,
+				EF546C71157F449E009DB81C /* FScreenBuilder.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EF546C60157F449D009DB81C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF546C61157F449D009DB81C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EF546C66157F449D009DB81C /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF546C67157F449D009DB81C /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		EF546C6C157F449E009DB81C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF546C6D157F449E009DB81C /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF546C72157F449E009DB81C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EF546C73157F449E009DB81C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EF546C75157F449E009DB81C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FScreenBuilder/FScreenBuilder-Prefix.pch";
+				INFOPLIST_FILE = "FScreenBuilder/FScreenBuilder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EF546C76157F449E009DB81C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FScreenBuilder/FScreenBuilder-Prefix.pch";
+				INFOPLIST_FILE = "FScreenBuilder/FScreenBuilder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF546C4D157F449D009DB81C /* Build configuration list for PBXProject "FScreenBuilder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF546C72157F449E009DB81C /* Debug */,
+				EF546C73157F449E009DB81C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF546C74157F449E009DB81C /* Build configuration list for PBXNativeTarget "FScreenBuilder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF546C75157F449E009DB81C /* Debug */,
+				EF546C76157F449E009DB81C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EF546C6F157F449E009DB81C /* FScreenBuilder.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EF546C70157F449E009DB81C /* FScreenBuilder.xcdatamodel */,
+			);
+			currentVersion = EF546C70157F449E009DB81C /* FScreenBuilder.xcdatamodel */;
+			path = FScreenBuilder.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EF546C4A157F449D009DB81C /* Project object */;
+}
