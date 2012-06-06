@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+@class FSViewController;
 @interface FSAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
@@ -16,6 +16,8 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+@property (nonatomic, strong) FSViewController *fsViewController;
 - (IBAction)saveAction:(id)sender;
 
 @end
+

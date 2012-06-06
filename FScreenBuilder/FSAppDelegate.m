@@ -7,18 +7,23 @@
 //
 
 #import "FSAppDelegate.h"
+#import "FSViewController.h"
 
 @implementation FSAppDelegate
 
 @synthesize window = _window;
-@synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
-@synthesize managedObjectModel = __managedObjectModel;
-@synthesize managedObjectContext = __managedObjectContext;
-
+@synthesize persistentStoreCoordinator  = __persistentStoreCoordinator;
+@synthesize managedObjectModel          = __managedObjectModel;
+@synthesize managedObjectContext        = __managedObjectContext;
+@synthesize fsViewController            = _fsViewController;
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    self.fsViewController = [[FSViewController alloc] initWithNibName:@"FSViewController" bundle:nil];
+
     // Insert code here to initialize your application
+    [self.window setContentView:self.fsViewController.view];
 }
+
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "Francescu.FScreenBuilder" in the user's Application Support directory.
 - (NSURL *)applicationFilesDirectory

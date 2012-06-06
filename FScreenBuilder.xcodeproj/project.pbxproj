@@ -14,6 +14,8 @@
 		EF546C6B157F449D009DB81C /* FSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF546C6A157F449D009DB81C /* FSAppDelegate.m */; };
 		EF546C6E157F449E009DB81C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF546C6C157F449E009DB81C /* MainMenu.xib */; };
 		EF546C71157F449E009DB81C /* FScreenBuilder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF546C6F157F449E009DB81C /* FScreenBuilder.xcdatamodeld */; };
+		EF546C7A157F44EB009DB81C /* FSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF546C78157F44EB009DB81C /* FSViewController.m */; };
+		EF546C7B157F44EB009DB81C /* FSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF546C79157F44EB009DB81C /* FSViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +24,18 @@
 		EF546C5A157F449D009DB81C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		EF546C5B157F449D009DB81C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EF546C5C157F449D009DB81C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		EF546C5F157F449D009DB81C /* FScreenBuilder-Info.plist */ = {isa = PBXFileReference; path = "FScreenBuilder-Info.plist"; sourceTree = "<group>"; };
+		EF546C5F157F449D009DB81C /* FScreenBuilder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FScreenBuilder-Info.plist"; sourceTree = "<group>"; };
 		EF546C61157F449D009DB81C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EF546C63157F449D009DB81C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EF546C65157F449D009DB81C /* FScreenBuilder-Prefix.pch */ = {isa = PBXFileReference; path = "FScreenBuilder-Prefix.pch"; sourceTree = "<group>"; };
+		EF546C65157F449D009DB81C /* FScreenBuilder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FScreenBuilder-Prefix.pch"; sourceTree = "<group>"; };
 		EF546C67157F449D009DB81C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		EF546C69157F449D009DB81C /* FSAppDelegate.h */ = {isa = PBXFileReference; path = FSAppDelegate.h; sourceTree = "<group>"; };
+		EF546C69157F449D009DB81C /* FSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSAppDelegate.h; sourceTree = "<group>"; };
 		EF546C6A157F449D009DB81C /* FSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSAppDelegate.m; sourceTree = "<group>"; };
 		EF546C6D157F449E009DB81C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		EF546C70157F449E009DB81C /* FScreenBuilder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FScreenBuilder.xcdatamodel; sourceTree = "<group>"; };
+		EF546C77157F44EB009DB81C /* FSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSViewController.h; sourceTree = "<group>"; };
+		EF546C78157F44EB009DB81C /* FSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSViewController.m; sourceTree = "<group>"; };
+		EF546C79157F44EB009DB81C /* FSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,9 @@
 				EF546C69157F449D009DB81C /* FSAppDelegate.h */,
 				EF546C6A157F449D009DB81C /* FSAppDelegate.m */,
 				EF546C6C157F449E009DB81C /* MainMenu.xib */,
+				EF546C77157F44EB009DB81C /* FSViewController.h */,
+				EF546C78157F44EB009DB81C /* FSViewController.m */,
+				EF546C79157F44EB009DB81C /* FSViewController.xib */,
 				EF546C6F157F449E009DB81C /* FScreenBuilder.xcdatamodeld */,
 				EF546C5E157F449D009DB81C /* Supporting Files */,
 			);
@@ -160,6 +168,7 @@
 				EF546C62157F449D009DB81C /* InfoPlist.strings in Resources */,
 				EF546C68157F449D009DB81C /* Credits.rtf in Resources */,
 				EF546C6E157F449E009DB81C /* MainMenu.xib in Resources */,
+				EF546C7B157F44EB009DB81C /* FSViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +182,7 @@
 				EF546C64157F449D009DB81C /* main.m in Sources */,
 				EF546C6B157F449D009DB81C /* FSAppDelegate.m in Sources */,
 				EF546C71157F449E009DB81C /* FScreenBuilder.xcdatamodeld in Sources */,
+				EF546C7A157F44EB009DB81C /* FSViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
