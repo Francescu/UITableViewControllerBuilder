@@ -66,20 +66,12 @@
 }
 - (NSString *)headerFileContent
 {
-    NSMutableString *content = [NSMutableString string];
-    
-    [content appendString:@"//                                  \n\
-     //  %className%.h                   \n\
-     //  Created by FScreenBuilder       \n\
-     //                                  \n\
-     \n\
-     #import <UIKit/UIKit.h>             \n\
-     \n"];
+     NSString *final = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"HeaderFileTemplate" ofType:@"txt"] encoding:NSUTF8StringEncoding error:nil];
     
     NSMutableString *classes = [NSMutableString string];
     if (self.customCellUse.state == NSOnState && ![[self.customCellClass stringValue]  isEqualToString:@"UITableViewCell"])
     {
-        [classes appendString:self.customCellClass.value];
+        [classes appendString:[self.customCellClass stringValue]];
     }
     if (self.appDelegateUse.state == NSOnState && ![[self.appDelegateClass stringValue] isEqualToString:@"UIApplicationDelegate"])
     {
@@ -91,39 +83,39 @@
     }
     if (![classes isEqualToString:@""])
     {
-        [content appendFormat:@"@class %@;\n",classes];
+        classes = [NSMutableString stringWithFormat:@"@class %@;",classes];
     }
-    [content appendString:@"\n\
-     @interface %className% : %classStyle%\n\
-     \n\
-     @property (strong, nonatomic) %appDelegateClass% *%appDelegateAttribut%;\n\
-     @property (strong, nonatomic) NSArray *%dataSourceAttribut%;\n\
-     @property (nonatomic, assign) BOOL isLoading;\n"];
+    final = [final stringByReplacingOccurrencesOfString:@"%classes%" withString:classes];
+    
+    NSMutableString *customProperty = [NSMutableString string];
+    
     if (![[[self.classStyle selectedCell] title] isEqualToString:@"UITableViewController"])
     {
         //IF !UITABLEVIEWCONTROLLER
-        [content appendString:@"    @property (strong, nonatomic) IBOutlet UITableView *tableView;\n"];
+        [customProperty appendString:@"@property (strong, nonatomic) IBOutlet UITableView *tableView;\n"];
     }
     
     //IF CustomCell
     if (self.customCellUse.state == NSOnState)
     {
-        [content appendString:@"    @property (nonatomic, assign) IBOutlet %customCellClass% *%customCellAttribut%;\n"];
+        [customProperty appendString:@"@property (nonatomic, assign) IBOutlet %customCellClass% *%customCellAttribut%;\n"];
     }
-#warning TODO : loading ComboBox
-    /*
-     //IF Loading == loadingCell
-     @property (nonatomic, strong) IBOutlet UITableViewCell *loadingCell;
-     //IF Loading == loadingView
-     @property (nonatomic, strong) IBOutlet UIView *loadingView;
-     
-     */
-    [content appendString:@"\
-     \n@end"];
+
+    NSString *loadingMethodValue = [[self.loadingMethod selectedCell] title];
+    if ([loadingMethodValue isEqualToString:@"loadingCell"])
+    {
+        [customProperty appendString:@"@property (nonatomic, strong) IBOutlet UITableViewCell *loadingCell;\n"];
+    }
+    else if ([loadingMethodValue isEqualToString:@"loadingCell"])
+    {
+         [customProperty appendString:@"@property (nonatomic, strong) IBOutlet UIView *loadingView;\n"];
+    }
+
     
-    NSString *final = content;
+    final = [final stringByReplacingOccurrencesOfString:@"%property_custom%" withString:customProperty];
+    
     final = [final stringByReplacingOccurrencesOfString:@"%className%" withString:[self.className stringValue]];
-    final = [final stringByReplacingOccurrencesOfString:@"%classStyle%" withString:[self.classStyle stringValue]];
+    final = [final stringByReplacingOccurrencesOfString:@"%classStyle%" withString:[[self.classStyle selectedCell] title]];
     
     final = [final stringByReplacingOccurrencesOfString:@"%customCellClass%" withString:[self.customCellClass stringValue]];
     final = [final stringByReplacingOccurrencesOfString:@"%customCellAttribut%" withString:[self.customCellAttribut stringValue]];
@@ -136,9 +128,13 @@
     return final;
     
 }
+
 - (NSString *)mainFileContent
 {
-    NSString *final = kMainFileTemplate;
+    #warning Add Remote Loading default function
+    //NSString *final = kMainFileTemplate;
+    NSString *final = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"MainFileTemplate" ofType:@"txt"] encoding:NSUTF8StringEncoding error:nil];
+                
     final = [final stringByReplacingOccurrencesOfString:@"%import_custom%" withString:[self importCustom]];
     final = [final stringByReplacingOccurrencesOfString:@"%synthesize_custom%" withString:[self synthesizeCustom]];
     
@@ -150,15 +146,24 @@
         final = [final stringByReplacingOccurrencesOfString:@"%set_appDelegate%" withString:@""];
     }
     
-#warning Set LoadingCell
-    final = [final stringByReplacingOccurrencesOfString:@"%numberOfRows_check_loadingCell%" withString:@""];
-    final = [final stringByReplacingOccurrencesOfString:@"%cellForRow_check_loadingCell%" withString:@""];
+    NSString *numberOfRows_check_loadingCell = @"";
+    if ([[[self.loadingMethod selectedCell] title] isEqualToString:@"loadingCell"])
+    {
+        numberOfRows_check_loadingCell = @"if (self.isLoading)\n\
+        {\n\
+            return 1;\n\
+        }\n";
+    }
+    
+    final = [final stringByReplacingOccurrencesOfString:@"%numberOfRows_check_loadingCell%" withString:numberOfRows_check_loadingCell];
+    
+    final = [final stringByReplacingOccurrencesOfString:@"%cellForRow_check_loadingCell%" withString:[self cellForRowLoading]];
     
     final = [final stringByReplacingOccurrencesOfString:@"%cellForRow_content%" withString:[self cellForRowContent]];
     
     
     final = [final stringByReplacingOccurrencesOfString:@"%className%" withString:[self.className stringValue]];
-    final = [final stringByReplacingOccurrencesOfString:@"%classStyle%" withString:[self.classStyle stringValue]];
+    final = [final stringByReplacingOccurrencesOfString:@"%classStyle%" withString:[[self.classStyle selectedCell] title]];
     
     final = [final stringByReplacingOccurrencesOfString:@"%customCellClass%" withString:[self.customCellClass stringValue]];
     final = [final stringByReplacingOccurrencesOfString:@"%customCellAttribut%" withString:[self.customCellAttribut stringValue]];
@@ -179,17 +184,17 @@
     NSMutableString *content = [NSMutableString string];
     if (self.appDelegateUse.state == NSOnState && ![[self.appDelegateClass stringValue] isEqualToString:@"UIApplicationDelegate"])
     {
-        [content appendFormat:@"#import %@;\n",[self.appDelegateClass stringValue]];
+        [content appendFormat:@"#import \"%@.h\"\n",[self.appDelegateClass stringValue]];
     }
     
     if (self.customCellUse.state == NSOnState && ![[self.customCellClass stringValue] isEqualToString:@"UITableViewCell"])
     {
-        [content appendFormat:@"#import %@;\n",[self.customCellClass stringValue]];
+        [content appendFormat:@"#import \"%@.h\"\n",[self.customCellClass stringValue]];
     }
     
     if (![[self.dataSourceClass stringValue] isEqualToString:@"NSString"])
     {
-        [content appendFormat:@"#import %@;\n",[self.dataSourceClass stringValue]];
+        [content appendFormat:@"#import \"%@.h\"\n",[self.dataSourceClass stringValue]];
     }
     
 #warning AsyncImageView & ASIFormRequest
@@ -213,17 +218,46 @@
         [content appendFormat:@"@synthesize %@ = _%@;\n",[self.customCellAttribut stringValue],[self.customCellAttribut stringValue]];
     }
     
-    if (![[self.classStyle stringValue] isEqualToString:@"UITableViewController"])
+    if (![[[self.classStyle selectedCell] title] isEqualToString:@"UITableViewController"])
     {
         [content appendString:@"@synthesize tableView = _tableView;\n"];
     }
     
-#warning Synthesize Loading    
+    NSString *loadingMethodValue = [[self.loadingMethod selectedCell] title];
+    if ([loadingMethodValue isEqualToString:@"loadingCell"])
+    {
+        [content appendString:@"@synthesize loadingCell = _loadingCell;\n"];
+    }
+    else if ([loadingMethodValue isEqualToString:@"loadingCell"])
+    {
+        [content appendString:@"@synthesize loadingView = _loadingView;\n"];
+    }
+    
     /*
     %synthesize_loading%\*/
     return content;
 
   
+}
+- (NSString *)cellForRowLoading
+{
+    if (![[[self.loadingMethod selectedCell] title] isEqualToString:@"loadingCell"])
+    {
+        return @"";
+    }
+    NSString *content = @"if (self.isLoading){\n\
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@\"LoadingCell\"];\n\
+    if (cell == nil)\n\
+    {\n\
+        //[[NSBundle mainBundle] loadNibNamed:@\"%customCellNib%\" owner:self options:nil];\n\
+        cell = self.loadingCell;\n\
+        //self.%customCellAttribut% = nil;\n\
+        //self.loadingCell = nil;\n\
+        //cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@\"loadingCellBackground.png\"]];\n\
+    }\n\
+    return cell;\n\
+}";
+    return content;
 }
 - (NSString *)cellForRowContent
 {
@@ -250,4 +284,5 @@
     
     return content;
 }
+
 @end

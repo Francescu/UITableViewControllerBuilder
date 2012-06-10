@@ -16,6 +16,9 @@
 		EF546C71157F449E009DB81C /* FScreenBuilder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF546C6F157F449E009DB81C /* FScreenBuilder.xcdatamodeld */; };
 		EF546C7A157F44EB009DB81C /* FSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF546C78157F44EB009DB81C /* FSViewController.m */; };
 		EF546C7B157F44EB009DB81C /* FSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF546C79157F44EB009DB81C /* FSViewController.xib */; };
+		EFA0B4951580A5670023B357 /* NibTemplateTableViewController.txt in Resources */ = {isa = PBXBuildFile; fileRef = EFA0B4941580A5670023B357 /* NibTemplateTableViewController.txt */; };
+		EFA0B4971580A6990023B357 /* MainFileTemplate.txt in Resources */ = {isa = PBXBuildFile; fileRef = EFA0B4961580A6990023B357 /* MainFileTemplate.txt */; };
+		EFA0B4991580A88B0023B357 /* HeaderFileTemplate.txt in Resources */ = {isa = PBXBuildFile; fileRef = EFA0B4981580A88A0023B357 /* HeaderFileTemplate.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		EF546C77157F44EB009DB81C /* FSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSViewController.h; sourceTree = "<group>"; };
 		EF546C78157F44EB009DB81C /* FSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSViewController.m; sourceTree = "<group>"; };
 		EF546C79157F44EB009DB81C /* FSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSViewController.xib; sourceTree = "<group>"; };
+		EFA0B4941580A5670023B357 /* NibTemplateTableViewController.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NibTemplateTableViewController.txt; sourceTree = "<group>"; };
+		EFA0B4961580A6990023B357 /* MainFileTemplate.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MainFileTemplate.txt; sourceTree = "<group>"; };
+		EFA0B4981580A88A0023B357 /* HeaderFileTemplate.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeaderFileTemplate.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,9 @@
 				EF546C79157F44EB009DB81C /* FSViewController.xib */,
 				EF546C6F157F449E009DB81C /* FScreenBuilder.xcdatamodeld */,
 				EF546C5E157F449D009DB81C /* Supporting Files */,
+				EFA0B4941580A5670023B357 /* NibTemplateTableViewController.txt */,
+				EFA0B4981580A88A0023B357 /* HeaderFileTemplate.txt */,
+				EFA0B4961580A6990023B357 /* MainFileTemplate.txt */,
 			);
 			path = FScreenBuilder;
 			sourceTree = "<group>";
@@ -169,6 +178,9 @@
 				EF546C68157F449D009DB81C /* Credits.rtf in Resources */,
 				EF546C6E157F449E009DB81C /* MainMenu.xib in Resources */,
 				EF546C7B157F44EB009DB81C /* FSViewController.xib in Resources */,
+				EFA0B4951580A5670023B357 /* NibTemplateTableViewController.txt in Resources */,
+				EFA0B4971580A6990023B357 /* MainFileTemplate.txt in Resources */,
+				EFA0B4991580A88B0023B357 /* HeaderFileTemplate.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +316,7 @@
 				EF546C76157F449E009DB81C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

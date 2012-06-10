@@ -1,0 +1,18 @@
+//
+//  %className%.h
+//  Created by FScreenBuilder
+//
+
+#import <UIKit/UIKit.h>
+
+%classes%
+@interface %className% : %classStyle%
+
+@property (strong, nonatomic) %appDelegateClass% *%appDelegateAttribut%;
+@property (strong, nonatomic) NSArray *%dataSourceAttribut%;
+@property (nonatomic, assign) BOOL isLoading;
+     
+%property_custom%
+
+//%function_custom%
+@end
