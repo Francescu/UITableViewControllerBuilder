@@ -91,17 +91,24 @@
      NSString *final = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"HeaderFileTemplate" ofType:@"txt"] encoding:NSUTF8StringEncoding error:nil];
     
     NSMutableString *classes = [NSMutableString string];
+    
+    NSMutableString *customProperty = [NSMutableString string];
+    
     if (self.customCellUse.state == NSOnState && ![[self.customCellClass stringValue]  isEqualToString:@"UITableViewCell"])
     {
         [classes appendString:[self.customCellClass stringValue]];
     }
-    if (self.appDelegateUse.state == NSOnState && ![[self.appDelegateClass stringValue] isEqualToString:@"UIApplicationDelegate"])
+    if (self.appDelegateUse.state == NSOnState)
     {
-        if (![classes isEqualToString:@""])
+        if ([[self.appDelegateClass stringValue] isEqualToString:@"UIApplicationDelegate"])
         {
-            [classes appendString:@","];
+            if (![classes isEqualToString:@""])
+            {
+                [classes appendString:@","];
+            }
+            [classes appendString:[self.appDelegateClass stringValue]];
         }
-        [classes appendString:[self.appDelegateClass stringValue]];
+        [customProperty appendString:@"@property (strong, nonatomic) %appDelegateClass% *%appDelegateAttribut%;\n"];
     }
     if (![classes isEqualToString:@""])
     {
@@ -109,7 +116,6 @@
     }
     final = [final stringByReplacingOccurrencesOfString:@"%classes%" withString:classes];
     
-    NSMutableString *customProperty = [NSMutableString string];
     
     if (![[[self.classStyle selectedCell] title] isEqualToString:@"UITableViewController"])
     {

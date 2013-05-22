@@ -84,7 +84,7 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="818860600">
+								<object class="NSMenuItem" id="256548453">
 									<reference key="NSMenu" ref="110575045"/>
 									<string key="NSTitle">Save</string>
 									<string key="NSKeyEquiv">s</string>
@@ -134,7 +134,6 @@
 					<int key="NSvFlags">256</int>
 					<string key="NSFrameSize">{808, 521}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
@@ -208,22 +207,22 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">target: self.fsViewController</string>
-						<reference key="source" ref="818860600"/>
+						<reference key="source" ref="256548453"/>
 						<reference key="destination" ref="976324537"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="818860600"/>
+							<reference key="NSSource" ref="256548453"/>
 							<reference key="NSDestination" ref="976324537"/>
 							<string key="NSLabel">target: self.fsViewController</string>
 							<string key="NSBinding">target</string>
 							<string key="NSKeyPath">self.fsViewController</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSSelectorName</string>
-								<string key="NS.object.0">savePressed:</string>
+								<string key="NS.object.0">saveWasPressed:</string>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">553</int>
+					<int key="connectionID">555</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -277,7 +276,7 @@
 							<reference ref="1056857174"/>
 							<reference ref="304266470"/>
 							<reference ref="730635184"/>
-							<reference ref="818860600"/>
+							<reference ref="256548453"/>
 						</array>
 						<reference key="parent" ref="694149608"/>
 					</object>
@@ -336,7 +335,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">546</int>
-						<reference key="object" ref="818860600"/>
+						<reference key="object" ref="256548453"/>
 						<reference key="parent" ref="110575045"/>
 					</object>
 				</array>
@@ -366,7 +365,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">554</int>
+			<int key="maxID">555</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
