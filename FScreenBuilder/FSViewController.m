@@ -29,25 +29,24 @@
     [super loadView];
     //[self.generateButton setTarget:self];
     //[self.generateButton setAction:@selector(generateButtonWasPressed)];
+    [self.headerPreview setFont:[NSFont fontWithName:@"Monaco" size:10]];
+    [self.mainPreview setFont:[NSFont fontWithName:@"Monaco" size:10]];
 }
 - (IBAction)generateButtonWasPressed:(id)sender
 {
     NSLog(@"OK");/*
     */
 }
-- (IBAction)buttonClicked:(id)sender
-{
-    NSLog(@"ok");
+- (IBAction)saveWasPressed:(id)sender {
     NSString *headerFile = [self headerFileContent];
     NSString *mainFile = [self mainFileContent];
-    
     NSSavePanel *op = [NSSavePanel savePanel];
     [op setNameFieldStringValue:[NSString stringWithFormat:@"%@.h",[self.className stringValue]]];
     
-   /* [op setAllowsMultipleSelection:NO];
-    [op setCanChooseDirectories:YES];
-    [op setCanChooseFiles:NO];
-    [op setCanCreateDirectories:YES];*/
+    /* [op setAllowsMultipleSelection:NO];
+     [op setCanChooseDirectories:YES];
+     [op setCanChooseFiles:NO];
+     [op setCanCreateDirectories:YES];*/
     if ([op runModal] == NSOKButton)
     {
         NSURL *directory = [op directoryURL];
@@ -57,7 +56,7 @@
         
         NSString *mPath = [NSString stringWithFormat:@"%@/%@.m",filePath,[self.className stringValue]];
         NSString *hPath = [NSString stringWithFormat:@"%@/%@.h",filePath,[self.className stringValue]];
-    
+        
         [headerFile writeToFile:hPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
         [mainFile writeToFile:mPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
 #warning Create UITableViewController Nib
@@ -65,11 +64,27 @@
     }
 }
 
+- (IBAction)buttonClicked:(id)sender
+{
+    NSLog(@"ok");
+    NSString *headerFile = [self headerFileContent];
+    NSString *mainFile = [self mainFileContent];
+    [self.headerPreview setString:headerFile];
+    [self.mainPreview setString:mainFile];
+    return;
+    
+    
+}
+
 - (IBAction)includeApplicationDelegateWasPressed:(NSButton *)sender {
     BOOL state = (self.appDelegateUse.state == NSOnState);
     [self.appDelegateAttribut setEnabled:state];
     [self.appDelegateClass setEnabled:state];
 
+}
+
+- (IBAction)previewWasPressed:(id)sender {
+    [self buttonClicked:sender];
 }
 - (NSString *)headerFileContent
 {

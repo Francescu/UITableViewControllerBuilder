@@ -31,8 +31,12 @@
 
 @property (nonatomic, strong) IBOutlet NSButton *generateButton;
 
+@property (strong) IBOutlet NSTextView *headerPreview;
+@property (strong) IBOutlet NSTextView *mainPreview;
 
+- (IBAction)saveWasPressed:(id)sender;
 - (IBAction)buttonClicked:(id)sender;
 - (IBAction)includeApplicationDelegateWasPressed:(NSButton *)sender;
+- (IBAction)previewWasPressed:(id)sender;
 
 @end
