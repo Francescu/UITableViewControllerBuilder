@@ -33,5 +33,6 @@
 
 
 - (IBAction)buttonClicked:(id)sender;
+- (IBAction)includeApplicationDelegateWasPressed:(NSButton *)sender;
 
 @end

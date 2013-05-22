@@ -64,6 +64,13 @@
 #warning Create Custom Cell Nib
     }
 }
+
+- (IBAction)includeApplicationDelegateWasPressed:(NSButton *)sender {
+    BOOL state = (self.appDelegateUse.state == NSOnState);
+    [self.appDelegateAttribut setEnabled:state];
+    [self.appDelegateClass setEnabled:state];
+
+}
 - (NSString *)headerFileContent
 {
      NSString *final = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"HeaderFileTemplate" ofType:@"txt"] encoding:NSUTF8StringEncoding error:nil];
